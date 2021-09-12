@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 15
-  productGUID: 6c8b8e0dd75476e499bc40413c573387
+  productGUID: 4569fcb4ae9291f4faa0e29046a2aa4b
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -580,9 +580,9 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: 7225fa84-0409-4db7-9082-ec6f7dd4ac6f
+  cloudProjectId: b9754e6b-7eb8-4e7e-ab9c-cea407cf2f33
   framebufferDepthMemorylessMode: 0
-  projectName: Incremental Game
+  projectName: Incremental Game (1)
   organizationId: danyzakydany123
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0

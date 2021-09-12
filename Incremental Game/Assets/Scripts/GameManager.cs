@@ -26,18 +26,18 @@ public class GameManager : MonoBehaviour
     public Sprite[] ResourcesSprites;
 
     public Transform ResourcesParent;
-    public ResourcesController ResourcePrefab;
+    public ResourceController ResourcePrefab;
     public TapText TapTextPrefab;
 
     public Transform CoinIcon;
     public Text GoldInfo;
     public Text AutoCollectInfo;
 
-    private List<ResourcesController> _activeResources = new List<ResourcesController>();
+    private List<ResourceController> _activeResources = new List<ResourceController>();
     private List<TapText> _tapTextPool = new List<TapText>();
     private float _collectSecond;
 
-    public double TotalGold { get; private set; }
+    public double TotalGold;
 
     private void Start()
     {
@@ -45,8 +45,8 @@ public class GameManager : MonoBehaviour
     }
 
     private void Update()
-
     {
+
         // Fungsi untuk selalu mengeksekusi CollectPerSecond setiap detik 
         _collectSecond += Time.unscaledDeltaTime;
         if (_collectSecond >= 1f)
@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour
         foreach (ResourceConfig config in ResourcesConfigs)
         {
             GameObject obj = Instantiate(ResourcePrefab.gameObject, ResourcesParent, false);
-            ResourcesController resource = obj.GetComponent<ResourcesController>();
+            ResourceController resource = obj.GetComponent<ResourceController>();
 
             resource.SetConfig(config);
             obj.gameObject.SetActive(showResources);
@@ -83,7 +83,7 @@ public class GameManager : MonoBehaviour
 
     public void ShowNextResource()
     {
-        foreach (ResourcesController resource in _activeResources)
+        foreach (ResourceController resource in _activeResources)
         {
             if (!resource.gameObject.activeSelf)
             {
@@ -95,7 +95,7 @@ public class GameManager : MonoBehaviour
 
     private void CheckResourceCost()
     {
-        foreach (ResourcesController resource in _activeResources)
+        foreach (ResourceController resource in _activeResources)
         {
             bool isBuyable = false;
             if (resource.IsUnlocked)
@@ -106,6 +106,7 @@ public class GameManager : MonoBehaviour
             {
                 isBuyable = TotalGold >= resource.GetUnlockCost();
             }
+
             resource.ResourceImage.sprite = ResourcesSprites[isBuyable ? 1 : 0];
         }
     }
@@ -113,7 +114,7 @@ public class GameManager : MonoBehaviour
     private void CollectPerSecond()
     {
         double output = 0;
-        foreach (ResourcesController resource in _activeResources)
+        foreach (ResourceController resource in _activeResources)
         {
             if (resource.IsUnlocked)
             {
@@ -124,25 +125,28 @@ public class GameManager : MonoBehaviour
         output *= AutoCollectPercentage;
         // Fungsi ToString("F1") ialah membulatkan angka menjadi desimal yang memiliki 1 angka di belakang koma 
         AutoCollectInfo.text = $"Auto Collect: { output.ToString("F1") } / second";
+
         AddGold(output);
     }
 
     public void AddGold(double value)
     {
         TotalGold += value;
+
         GoldInfo.text = $"Gold: { TotalGold.ToString("0") }";
     }
 
     public void CollectByTap(Vector3 tapPosition, Transform parent)
     {
         double output = 0;
-        foreach (ResourcesController resource in _activeResources)
+        foreach (ResourceController resource in _activeResources)
         {
             if (resource.IsUnlocked)
             {
                 output += resource.GetOutput();
             }
         }
+
         TapText tapText = GetOrCreateTapText();
         tapText.transform.SetParent(parent, false);
         tapText.transform.position = tapPosition;
@@ -160,17 +164,15 @@ public class GameManager : MonoBehaviour
         if (tapText == null)
         {
             tapText = Instantiate(TapTextPrefab).GetComponent<TapText>();
+
             _tapTextPool.Add(tapText);
         }
+
         return tapText;
     }
 }
 
-// Fungsi System.Serializable adalah agar object bisa di-serialize dan
-// value dapat di-set dari inspector
-
 [System.Serializable]
-
 public struct ResourceConfig
 
 {
