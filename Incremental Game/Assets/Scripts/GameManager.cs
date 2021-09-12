@@ -43,8 +43,6 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         AddAllResources();
-
-       
     }
 
     private void Update()
