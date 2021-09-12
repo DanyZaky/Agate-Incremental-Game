@@ -38,10 +38,13 @@ public class GameManager : MonoBehaviour
     private float _collectSecond;
 
     public double TotalGold;
+    private double[] isTotalGold = {100, 1000, 50000, 100000, 200000, 1000000};
 
     private void Start()
     {
         AddAllResources();
+
+       
     }
 
     private void Update()
@@ -58,6 +61,13 @@ public class GameManager : MonoBehaviour
 
         CoinIcon.transform.localScale = Vector3.LerpUnclamped(CoinIcon.transform.localScale, Vector3.one * 2f, 0.15f);
         CoinIcon.transform.Rotate(0f, 0f, Time.deltaTime * -100f);
+        
+        GoldAchievement(isTotalGold[0], 0.ToString());
+        GoldAchievement(isTotalGold[1], 1.ToString());
+        GoldAchievement(isTotalGold[2], 2.ToString());
+        GoldAchievement(isTotalGold[3], 3.ToString());
+        GoldAchievement(isTotalGold[4], 4.ToString());
+        GoldAchievement(isTotalGold[5], 5.ToString());
     }
 
     private void AddAllResources()
@@ -134,6 +144,9 @@ public class GameManager : MonoBehaviour
         TotalGold += value;
 
         GoldInfo.text = $"Gold: { TotalGold.ToString("0") }";
+
+        
+        
     }
 
     public void CollectByTap(Vector3 tapPosition, Transform parent)
@@ -169,6 +182,14 @@ public class GameManager : MonoBehaviour
         }
 
         return tapText;
+    }
+
+    public void GoldAchievement(double isNilaiGold, string value)
+    {
+        if (TotalGold > isNilaiGold)
+        {
+            AchievementController.Instance.UnlockAchievement(AchievementType.TotalGoldAchieve, value);
+        }
     }
 }
 

@@ -77,5 +77,5 @@ public class AchievementData
 
 public enum AchievementType
 {
-    UnlockResource
+    UnlockResource, TotalGoldAchieve
 }

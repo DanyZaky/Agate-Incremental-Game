@@ -166,7 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _popUpTransform: {fileID: 93141690}
   _popUpText: {fileID: 292561647}
-  _popUpShowDuration: 3
+  _popUpShowDuration: 5
   _achievementList:
   - Title: Kamu diterima magang!
     Type: 0
@@ -187,6 +187,30 @@ MonoBehaviour:
   - Title: Kamu baik sekali bisa sedekah!
     Type: 0
     Value: Sedekah
+    IsUnlocked: 0
+  - Title: Duid mu 100, ayok nguli!
+    Type: 1
+    Value: 0
+    IsUnlocked: 0
+  - Title: Duidmu 1000, mana cukup beli pulsa wkwk
+    Type: 1
+    Value: 1
+    IsUnlocked: 0
+  - Title: Duid mu 50000, mayan beli sisen pass
+    Type: 1
+    Value: 2
+    IsUnlocked: 0
+  - Title: Duid mu 100000, tabung aja!
+    Type: 1
+    Value: 3
+    IsUnlocked: 0
+  - Title: Duid mu 200000, yok bisa yok!
+    Type: 1
+    Value: 4
+    IsUnlocked: 0
+  - Title: Duid mu 1 JUTA, bismillah SANGU cepet cair . . .
+    Type: 1
+    Value: 5
     IsUnlocked: 0
 --- !u!114 &93141692
 MonoBehaviour:
@@ -917,7 +941,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000040591953, y: 0.000015307563}
+  m_AnchoredPosition: {x: 0.000040591953, y: -0.0000048605275}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &694010519
@@ -1071,8 +1095,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 530111423}
   m_HandleRect: {fileID: 530111422}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.9999999
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1421,7 +1445,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1969577243}
   m_Direction: 0
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1885,28 +1909,28 @@ MonoBehaviour:
   ResourcesConfigs:
   - Name: Pengangguran
     UnlockCost: 0
-    UpgradeCost: 1
-    Output: 2
-  - Name: Magang
-    UnlockCost: 100
-    UpgradeCost: 100
+    UpgradeCost: 10
     Output: 200
-  - Name: Pegawai
-    UnlockCost: 1000
-    UpgradeCost: 1000
-    Output: 2000
-  - Name: Manager
-    UnlockCost: 10000
-    UpgradeCost: 10000
-    Output: 20000
-  - Name: CEO
+  - Name: Magang
     UnlockCost: 100000
     UpgradeCost: 100000
     Output: 200000
+  - Name: Pegawai
+    UnlockCost: 10000000
+    UpgradeCost: 10000000
+    Output: 20000000
+  - Name: Manager
+    UnlockCost: 50000000
+    UpgradeCost: 50000000
+    Output: 70000000
+  - Name: CEO
+    UnlockCost: 100000000
+    UpgradeCost: 100000000
+    Output: 200000000
   - Name: Sedekah
-    UnlockCost: 1000000
-    UpgradeCost: 1000000
-    Output: 2000000
+    UnlockCost: 1000000000
+    UpgradeCost: 1000000000
+    Output: 2000000000
   ResourcesSprites:
   - {fileID: 21300000, guid: 93fb0b84ebdd3164b98f9b4a7e1de1cc, type: 3}
   - {fileID: 21300000, guid: 35838804f1d834f43b19eb664351b7cd, type: 3}
