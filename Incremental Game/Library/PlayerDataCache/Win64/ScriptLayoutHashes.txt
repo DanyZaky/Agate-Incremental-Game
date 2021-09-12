@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-Z:/Github Repo/Agate-Incremental-Game/Build/Incremental Game.exe
+Z:/Github Repo/New folder/Agate-Incremental-Game/Build/Incremental Game.exe
 SceneListBegin?
 Assets/Scenes/Gameplay.unity
 SceneListEnd?
@@ -140,6 +140,7 @@ ad9173d3a69d99153f38ed4b62226129 UnityEngine.Networking.dll:UnityEngine.Networki
 cf924d44d3eccbaf0c62c8b9f01c3faf Assembly-CSharp.dll:.GameManager
 aa82b3ce4c0c9b227036c0337315c5d3 Unity.TextMeshPro.dll:TMPro.TMP_FontAsset
 e51c09a4cc447f11db225afcd8e3e490 Unity.TextMeshPro.dll:TMPro.TMP_Settings
+b62a11920ccd5b7b356ac0c734d04f9d Assembly-CSharp.dll:.MalingController
 cf96e5f7b3d069bab453925bd41be04e UnityEngine.TestRunner.dll:UnityEngine.TestTools.EnumerableSetUpTearDownCommandState
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.PlayModeRunnerCallback
 259d013faac28e8ba0aa2a7542273735 UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.PlaymodeTestsController
@@ -161,4 +162,3 @@ d791aa6007fa3640be1164ea75bb087d Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
 c6666661329916e218bee7f5e79e60f5 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 3165968ba45c74472d279ba04455fccb Unity.TextMeshPro.dll:TMPro.TMP_ColorGradient
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
-b62a11920ccd5b7b356ac0c734d04f9d Assembly-CSharp.dll:.MalingController
